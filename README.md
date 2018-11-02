@@ -32,10 +32,10 @@ This is the `sms-consumer` repo, a PHP script using `php-amqplib`.
 
 Copy and paste the following into your `.env` file:
 
-    RABBITMQ_HOST: 172.27.0.2
-    RABBITMQ_PORT: 5672
-    RABBITMQ_USER: sms
-    RABBITMQ_PASSWORD: password
+    RABBITMQ_HOST=172.27.0.4
+    RABBITMQ_PORT=5672
+    RABBITMQ_USER=sms
+    RABBITMQ_PASSWORD=password
 
 These values must be the same as in the `app/config/parameters.yml` file in the [`sms`](https://github.com/programarivm/sms) app.
 
