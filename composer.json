@@ -1,0 +1,14 @@
+{
+  "name": "programarivm/sms-consumer",
+  "description": "Distributed app to send SMS messages. This is a RabbitMQ consumer.",
+  "authors": [
+    {
+      "name": "Jordi Bassagañas",
+      "email": "info@programarivm.com",
+      "homepage": "https://programarivm.com"
+    }
+  ],
+  "require": {
+    "php-amqplib/php-amqplib": "^2.8"
+  }
+}

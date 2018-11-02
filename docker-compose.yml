@@ -1,0 +1,9 @@
+version: "3.5"
+
+services:
+  php_fpm:
+      build: .
+      container_name: sms_consumer_php_fpm
+      working_dir: /usr/share/nginx/sms
+      volumes:
+          - ./:/usr/share/nginx/sms
