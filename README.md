@@ -28,6 +28,21 @@ This is the `sms-consumer` repo, a PHP script using `php-amqplib`.
 
     docker exec -it --user 1000:1000 sms_consumer_php_fpm composer install
 
+### Environment Setup
+
+Copy and paste the following into your `.env` file:
+
+    RABBITMQ_HOST: 172.27.0.2
+    RABBITMQ_PORT: 5672
+    RABBITMQ_USER: sms
+    RABBITMQ_PASSWORD: password
+
+Please note, the value of `RABBITMQ_HOST` is the IP of the RabbitMQ container of the [`sms`](https://github.com/programarivm/sms) application.
+
+The `IPAddress` is obtained this way:
+
+    docker inspect sms_rabbitmq
+
 ### TODO
 
 Write more documentation.
