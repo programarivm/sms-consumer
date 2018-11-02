@@ -37,11 +37,7 @@ Copy and paste the following into your `.env` file:
     RABBITMQ_USER: sms
     RABBITMQ_PASSWORD: password
 
-Please note, the value of `RABBITMQ_HOST` is the IP of the RabbitMQ container of the [`sms`](https://github.com/programarivm/sms) application.
-
-The `IPAddress` is obtained this way:
-
-    docker inspect sms_rabbitmq
+These values must be the same as in the `app/config/parameters.yml` file in the [`sms`](https://github.com/programarivm/sms) app.
 
 ### TODO
 
