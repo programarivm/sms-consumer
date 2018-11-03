@@ -15,8 +15,7 @@ This web app is split into three loosely coupled parts -- repos that can run in 
 More specifically, the Symfony producer in `sms` is built with `php-amqplib/rabbitmq-bundle`. However, the consumer in `sms-consumer` is a PHP script written with `php-amqplib` -- for the sake of simplicity we are considering not to use a framework in that repo.
 
 
-SMS Consumer
-============
+# SMS Consumer
 
 This is the `sms-consumer` repo, a PHP script using `php-amqplib`.
 
@@ -32,13 +31,24 @@ This is the `sms-consumer` repo, a PHP script using `php-amqplib`.
 
 Copy and paste the following into your `.env` file:
 
-    RABBITMQ_HOST=172.27.0.4
+    RABBITMQ_HOST=172.27.0.2
     RABBITMQ_PORT=5672
     RABBITMQ_USER=sms
     RABBITMQ_PASSWORD=password
 
-These values must be the same as in the `app/config/parameters.yml` file in the [`sms`](https://github.com/programarivm/sms) app.
+    TWILIO_NUMBER=+447000000000
+    TWILIO_SID=ACXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+    TWILIO_TOKEN=your_auth_token
 
-### TODO
+> **Note**: the RabbitMQ values must be the same as in the `app/config/parameters.yml` file in the [`sms`](https://github.com/programarivm/sms) app. The Twilio values must be those ones of your Twilio account.
 
-Write more documentation.
+### Contributions
+
+Would you help make this library better? Contributions are welcome.
+
+- Feel free to send a pull request
+- Drop an email at info@programarivm.com with the subject "SMS Contributions"
+- Leave me a comment on [Twitter](https://twitter.com/programarivm)
+- Say hello on [Google+](https://plus.google.com/+Programarivm)
+
+Many thanks.
