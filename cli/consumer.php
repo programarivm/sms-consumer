@@ -16,11 +16,11 @@ $connection = new AMQPStreamConnection(
 );
 $channel = $connection->channel();
 
-$channel->exchange_declare('send-message', 'direct', true, false, false);
+$channel->exchange_declare('send_message', 'direct', true, false, false);
 
-$channel->queue_declare('send-message-queue', false, true, false, false);
+$channel->queue_declare('send_message_queue', false, true, false, false);
 
-$channel->queue_bind('send-message-queue', 'send-message');
+$channel->queue_bind('send_message_queue', 'send_message');
 
 echo " [*] Waiting for SMS messasges. To exit press CTRL+C\n";
 
@@ -30,7 +30,7 @@ $callback = function ($msg) {
     echo ' [x] ', $msg->body, "\n";
 };
 
-$channel->basic_consume('send-message-queue', '', false, false, false, false, $callback);
+$channel->basic_consume('send_message_queue', '', false, false, false, false, $callback);
 
 while (count($channel->callbacks)) {
     $channel->wait();
