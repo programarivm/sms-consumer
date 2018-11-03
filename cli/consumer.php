@@ -18,9 +18,9 @@ $channel = $connection->channel();
 
 $channel->exchange_declare('send-message', 'direct', true, false, false);
 
-list($queue_name, ,) = $channel->queue_declare("", false, false, true, false);
+$channel->queue_declare('send-message-queue', false, true, false, false);
 
-$channel->queue_bind($queue_name, 'send-message');
+$channel->queue_bind('send-message-queue', 'send-message');
 
 echo " [*] Waiting for SMS messasges. To exit press CTRL+C\n";
 
@@ -30,7 +30,7 @@ $callback = function ($msg) {
     echo ' [x] ', $msg->body, "\n";
 };
 
-$channel->basic_consume($queue_name, '', false, true, false, false, $callback);
+$channel->basic_consume('send-message-queue', '', false, false, false, false, $callback);
 
 while (count($channel->callbacks)) {
     $channel->wait();
