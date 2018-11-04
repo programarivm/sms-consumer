@@ -8,7 +8,7 @@ RUN apt-get update && apt-get install -y \
 
 RUN docker-php-ext-configure zip --with-libzip
 
-RUN docker-php-ext-install zip pdo pdo_mysql sockets bcmath
+RUN docker-php-ext-install zip sockets bcmath
 
 RUN curl --silent --show-error https://getcomposer.org/installer | php && \
     mv composer.phar /usr/local/bin/composer

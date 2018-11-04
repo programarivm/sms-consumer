@@ -11,12 +11,6 @@
   "require": {
     "php-amqplib/php-amqplib": "^2.8",
     "vlucas/phpdotenv": "^2.5",
-    "twilio/sdk": "^5.24",
-    "doctrine/orm": "^2.6"
-  },
-  "autoload": {
-    "psr-4": {
-    "SmsConsumer\\": "src/"
-    }
+    "twilio/sdk": "^5.24"
   }
 }

@@ -31,12 +31,12 @@ $callback = function ($msg) use ($twilio) {
         [
             'from' => getenv('TWILIO_NUMBER'),
             'to' => $message['tel'],
-            'body' => $message['content']
+            'body' => $message['content'],
+            // 'statusCallback' => 'http://postb.in/1234abcd'
+            // taken from https://www.twilio.com/docs/sms/tutorials/how-to-confirm-delivery-php
         ]
     );
     echo '[x] Message id: '.$message->sid.PHP_EOL;
-    // TODO:
-    // update the sms message status in the database
 };
 
 $channel->basic_consume('send_sms_queue', '', false, false, false, false, $callback);
