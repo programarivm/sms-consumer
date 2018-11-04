@@ -35,6 +35,8 @@ $callback = function ($msg) use ($twilio) {
         ]
     );
     echo '[x] Message id: '.$message->sid.PHP_EOL;
+    // TODO:
+    // update the sms message status in the database
 };
 
 $channel->basic_consume('send_sms_queue', '', false, false, false, false, $callback);
