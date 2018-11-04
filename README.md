@@ -31,13 +31,6 @@ This is the `sms-consumer` repo, a PHP script using `php-amqplib`.
 
 Copy and paste the following into your `.env` file:
 
-    DATABASE_DRIVER=pdo_mysql
-    DATABASE_HOST=172.27.0.5
-    DATABASE_PORT=3306
-    DATABASE_NAME=sms
-    DATABASE_USER=root
-    DATABASE_PASSWORD=password
-
     RABBITMQ_HOST=172.27.0.2
     RABBITMQ_PORT=5672
     RABBITMQ_USER=sms
@@ -47,7 +40,7 @@ Copy and paste the following into your `.env` file:
     TWILIO_SID=ACXXXXXXXXXXXXXXXXXXXXXXXXXXXX
     TWILIO_TOKEN=your_auth_token
 
-> **Note**: the database and the RabbitMQ values must be the same as in the `app/config/parameters.yml` file in the [`sms`](https://github.com/programarivm/sms) app. The Twilio values must be those ones of your Twilio account.
+> **Note**: the RabbitMQ values must be the same as in the `app/config/parameters.yml` file in the [`sms`](https://github.com/programarivm/sms) app. The Twilio values must be those ones of your Twilio account.
 
 ### Run the consumers
 
@@ -55,7 +48,7 @@ Copy and paste the following into your `.env` file:
 
 ### Contributions
 
-Would you help make this library better? Contributions are welcome.
+Contributions are welcome.
 
 - Feel free to send a pull request
 - Drop an email at info@programarivm.com with the subject "SMS Contributions"
